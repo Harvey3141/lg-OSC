@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xdotool search -desktop 0 "Chromium" windowactivate
+sleep 1
+xdotool key F5
+

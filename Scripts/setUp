@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mv /home/lg/.fvwm2rc /home/lg/igloo/Scripts/Backup
+mv /home/lg/igloo/Scripts/.fvwm2rc /home/lg
+cd /home/lg/igloo/Scrips
+./install_dependencies.sh
