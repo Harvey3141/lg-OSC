@@ -58,12 +58,12 @@ master() {
     if [[ $FRAME_NO = 0 ]]; then
         return 0
     else
-        return 1
+        return 0
     fi
 }
 
 ## PRE-REQ
-
+echo $1
 ## CMDLINE loop
 while [[ -n "$1" ]]; do
     case $1 in
@@ -110,6 +110,7 @@ while [[ -n "$1" ]]; do
         unload)
             if( master ); then
 		echo "unloading earth"
+
                 xdotool mousemove --sync --screen 0 33 33
                 xdotool mousemove -screen 0 1895 40 click 1
                 xdoret=$?
