@@ -2,7 +2,7 @@
 
 mv /home/lg/.fvwm2rc /home/lg/igloo/Scripts/Backup/
 cp /home/lg/igloo/Scripts/.fvwm2rc /home/lg/
-sudo /home/lg/igloo/Scripts/install_dependencies.sh &
+#sudo /home/lg/igloo/Scripts/install_dependencies.sh &
 
 mv /home/lg/earth/config/slave/GoogleEarthPlus.conf-4.X /home/lg/igloo/Scripts/Backup/
 mv /home/lg/earth/config/slave/GoogleEarthPlus.conf-5.2 /home/lg/igloo/Scripts/Backup/
