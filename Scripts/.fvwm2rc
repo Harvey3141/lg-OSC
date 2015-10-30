@@ -18,7 +18,7 @@ DeskTopSize 3x3
 
 #PixmapPath /usr/include/X11/pixmaps/:/usr/share/icons/mini/
 #IconPath   /usr/include/X11/bitmaps/:/usr/share/icons/
-Style "*" BorderWidth 3, HandleWidth 3 
+Style "*" BorderWidth 0, HandleWidth 0, NoTitle 
 Style "Fvwm*"        NoTitle, Sticky, WindowListSkip
 Style "Fvwm Pager"   StaysOnTop, NoTitle
 Style "FvwmBanner"   StaysOnTop
@@ -33,14 +33,14 @@ EdgeResistance 10000 100
 AddToFunc "InitFunction" "I" Exec xsetroot -solid black &
 +                        "I" Exec xset dpms 0 0 0 -dpms s blank s noexpose s 0 0 &
 +                        "I" Exec xinput set-int-prop "3Dconnexion SpaceNavigator" "Device Enabled" 8 0 &
-+                        "I" Exec /home/lg/bin/startup-script.sh 2>&1 >/tmp/out | logger -p local3.info -s 2>/tmp/err &
++			 "I" Exec xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal >&1 >/tmp/out | logger -p local3.info -s 2>/tmp/err &
++                        "I" Exec /home/lg/igloo/Scripts/run-shellScriptRunner.sh
++                        "I" Exec /home/lg/earth/scripts/run-earth.sh 2>&1 >/tmp/out | logger -p local3.info -s 2>/tmp/err &i
++			 "I" Exec /home/lg/bin/startup-script.sh 2>&1 >/tmp/out | logger -p local3.info -s 2>/tmp/err &	
 +                        "I" Module FvwmPager 0 0
 +                        "I" Module FvwmAuto 600
 +                        "I" Module FvwmCommandS
-+			 "I" Exec xrandr --output DisplayPort-1 --off --output DisplayPort-0 --off --output VIRTUAL1 --off --output DisplayPort-2 --off --output HDMI-0 --mode 1920x1080 --refresh 60 --pos 0x0 --rotate normal --output VGA1 --off &
-+			 "I" Exec /home/lg/igloo/Scripts/run-chromium.sh &
-+			 "I" Exec /home/lg/igloo/Scripts/run-shellScriptRunner.sh &
-+			 "I" Exec /home/lg/earth/scripts/run-earth.sh &
+
 AddToFunc "RestartFunction" "I" Module FvwmButtons
 +                           "I" Module FvwmPager 0 0
 +                           "I" Module FvwmAuto 600
